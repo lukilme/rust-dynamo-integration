@@ -3,6 +3,9 @@ name = "dynamo_rust_integration"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+proc-macro = true
+
 [dependencies]
 dotenvy= "0.15"
 axum = "0.7"
@@ -14,3 +17,11 @@ aws-sdk-dynamodb = "=1.38.0"
 uuid = { version = "1", features = ["v4"] }
 hyper = "1.8.1"
 aws-credential-types = "1.2.10"
+syn = { version = "2.0", features = ["full"] }
+quote = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+tracing-appender = "0.2" # para logs em arquivo
+tracing-bunyan-formatter = "0.3"
+validator = { version = "0.20.0", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }

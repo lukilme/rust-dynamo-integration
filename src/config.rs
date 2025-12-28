@@ -13,7 +13,7 @@ impl AppConfig {
         Self {
             dynamodb_table: env::var("DYNAMODB_TABLE_NAME_FAKE")
                 .unwrap_or_else(|_| "users".into()),
-            dynamodb_local: env::var("DYNAMODB_LOCAL_FAKE")
+            dynamodb_local: env::var("DYNAMODB_LOCAL")
                 .unwrap_or_default() == "true",
             dynamodb_endpoint: env::var("DYNAMODB_LOCAL_ENDPOINT_FAKE").ok(),
             remote_cloud_config: RemoteCloud::from_env(),

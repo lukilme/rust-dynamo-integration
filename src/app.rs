@@ -1,6 +1,7 @@
 use axum::{Router, routing::post};
 use aws_sdk_dynamodb::Client;
 
+
 use crate::{handlers::users::create_user};
 
 #[derive(Clone)]

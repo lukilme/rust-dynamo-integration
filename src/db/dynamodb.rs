@@ -3,6 +3,7 @@ use aws_credential_types;
 use crate::config;
 
 pub async fn create_client(config: &config::AppConfig) -> Client {
+    print!("\nstate:{}\n",config.dynamodb_local);
     if config.dynamodb_local {
         create_local_client(
             config.dynamodb_endpoint
